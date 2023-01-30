@@ -1,4 +1,4 @@
-# tar_to_stream
+# tar_to_stream.h
 A tiny C++ single-header header-only library for writing TAR archives to arbitrary streams, packaging data from memory.
 
 ## Features
