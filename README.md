@@ -84,6 +84,14 @@ Hello world!
   );
 ```
 
+```bash
+> tar --list -vvf my_tarball.tar 
+-rwxr-xr-x my_username/my_group 13 2023-01-30 12:19 my_filename.txt
+
+> tar --list --numeric-owner -vvf my_tarball.tar 
+-rwxr-xr-x 1000/1000        13 2023-01-30 12:19 my_filename.txt
+```
+
 - File modification time is in seconds since epoch, i.e. 1 Jan 1970.
   - If you just want "now", you can use `std::time(0)`.
 - File mode is standard unix [numeric notation](https://en.wikipedia.org/wiki/File-system_permissions#Numeric_notation), i.e. `644`, `755`.
