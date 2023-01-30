@@ -1,6 +1,7 @@
 #ifndef TAR_TO_STREAM_H_INCLUDED
 #define TAR_TO_STREAM_H_INCLUDED
 
+#include <string>
 #include <cstring>
 
 template<typename T>
