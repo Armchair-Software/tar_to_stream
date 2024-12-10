@@ -1,5 +1,4 @@
-#ifndef TAR_TO_STREAM_H_INCLUDED
-#define TAR_TO_STREAM_H_INCLUDED
+#pragma once
 
 #include <string>
 #include <cstring>
@@ -63,5 +62,3 @@ void tar_to_stream_tail(T &stream, unsigned int tail_length = 512u * 2u) {
   /// TAR archives expect a tail of null bytes at the end - min of 512 * 2, but implementations often add more
   stream << std::string(tail_length, '\0');
 }
-
-#endif // TAR_TO_STREAM_H_INCLUDED
