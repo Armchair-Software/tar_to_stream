@@ -88,7 +88,7 @@ Hello world!
     .uid{1000},                                  // file owner user ID
     .gid{1000},                                  // file owner group ID
     .uname{"my_username"},                       // file owner username
-    .gname{"my_group"}                           // file owner group name
+    .gname{"my_group"},                          // file owner group name
   });
 ```
 (Note that all members of the `tar_to_stream_properties` struct are optional except `filename` and `data`; they will default to standard defaults if left unspecified.)
