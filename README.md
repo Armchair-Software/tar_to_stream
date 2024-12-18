@@ -10,6 +10,7 @@ A tiny C++ single-header header-only library for writing TAR archives to arbitra
   - In memory [`std::ostringstream`](https://en.cppreference.com/w/cpp/io/basic_ostringstream).
   - Direct to file using [`std::ofstream`](https://en.cppreference.com/w/cpp/io/basic_ofstream).
   - Over the network using [Boost ASIO streams](https://www.boost.org/doc/libs/1_81_0/doc/html/boost_asio/overview/networking/iostreams.html).
+  - To a logging framework, for example [LogStorm](https://github.com/VoxelStorm-Ltd/logstorm).
   - Compressed streams using [`bxz::ostream`](https://github.com/tmaklin/bxzstr) or any other streaming compression library.
   - Anything with a `<<` operator.
 - Set any filename.
