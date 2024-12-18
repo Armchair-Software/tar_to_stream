@@ -26,7 +26,7 @@ Imagine you've created several files in memory - let's say, a set of PNG images,
 
 This library was written out of a desire to create TAR archives in memory, containing "files" that also only existed in memory, without touching the disk, and avoiding unnecessary copies.
 
-At the time of writing, there was no header-only C++ TAR library, and no library capable of easily creating TAR archives from data in memory rather than files on disk, and writing to streams rather than files on disk.  The majority of libraries capable of handling TAR archives are written in C and somewhat bloated, and there was no implementation that could write in TAR format to a stream without incurring multiple copies.  Additionally, most of the C implementations that could write to memory require a fixed size buffer allocation up front.  This tiny, simple library addresses all of these gaps.
+At the time of writing, there is no other header-only C++ TAR library, and no library capable of easily creating TAR archives from data in memory rather than files on disk, and writing to streams rather than files on disk.  The majority of libraries capable of handling TAR archives are written in C and somewhat bloated, and there is currently no other implementation that can write in TAR format to a stream without incurring multiple copies.  Additionally, most of the C implementations that can write to memory require a fixed size buffer allocation up front.  This tiny, simple library addresses all of these gaps.
 
 ## Use case
 
