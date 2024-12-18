@@ -46,9 +46,18 @@ auto main()->int {
   std::string const my_buffer{"Hello world!\n"};
   std::ofstream stream("my_tarball.tar", std::ios::binary);
   
-  tar_to_stream(stream, "my_file_1.txt", my_buffer.data(), my_buffer.size()); // add one file to the archive
-  tar_to_stream(stream, "my_file_2.txt", my_buffer.data(), my_buffer.size());
-  tar_to_stream(stream, "my_file_3.txt", my_buffer.data(), my_buffer.size());
+  tar_to_stream(stream, { // add one file to the archive
+    .filename{"my_file_1.txt"},
+    .data{std::as_bytes(std::span{my_buffer})},
+  });
+  tar_to_stream(stream, {
+    .filename{"my_file_2.txt"},
+    .data{std::as_bytes(std::span{my_buffer})},
+  });
+  tar_to_stream(stream, {
+    .filename{"my_file_3.txt",
+    .data{std::as_bytes(std::span{my_buffer})},
+  });
   tar_to_stream_tail(stream); // finalise the archive by adding a tail of zeros
 
   return EXIT_SUCCESS;
@@ -71,19 +80,18 @@ Hello world!
 ### Advanced usage
 
 ```cpp
-  tar_to_stream(
-    stream,                              // the stream to write to
-    "my_dir/my_filename.txt",            // filename (string) including directory
-    my_buffer.data(),                    // pointer to buffer data (file contents)
-    my_buffer.size(),                    // size of buffer data (file contents)
-    static_cast<uint64_t>(std::time(0)), // file modification time (mtime): this sets it to "now"
-    "755",                               // file mode
-    1000,                                // file owner user ID
-    1000,                                // file owner group ID
-    "my_username",                       // file owner username
-    "my_group"                           // file owner group name
-  );
+  tar_to_stream(stream, {                        // the stream to write to
+    .filename{"my_dir/my_filename.txt"},         // filename (string) including directory
+    .data{std::as_bytes(std::span{my_buffer})},  // pointer to buffer data (file contents)
+    .mtime{static_cast<uint64_t>(std::time(0))}, // file modification time (mtime): this sets it to "now"
+    .filemode{"755"},                            // file mode
+    .uid{1000},                                  // file owner user ID
+    .gid{1000},                                  // file owner group ID
+    .uname{"my_username"},                       // file owner username
+    .gname{"my_group"}                           // file owner group name
+  });
 ```
+(Note that all members of the `tar_to_stream_properties` struct are optional except `filename` and `data`; they will default to standard defaults if left unspecified.)
 
 ```bash
 > tar --list -vvf my_tarball.tar 
