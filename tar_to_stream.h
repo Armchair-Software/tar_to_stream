@@ -53,7 +53,7 @@ void tar_to_stream(T &stream,                                                   
   }
   sprintf(header.chksum, "%06o", checksum_value);
 
-  auto const padding{512u - static_cast<unsigned int>(size % 512)};
+  auto const padding{(512u - size % 512) & 511u};
   stream << std::string_view(header.name, sizeof(header)) << std::string_view(data, size) << std::string(padding, '\0');
 }
 
