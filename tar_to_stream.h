@@ -9,14 +9,14 @@
 
 struct tar_to_stream_properties {
   /// Properties of the file to enter into the stream
-  std::string filename;                                                         /// name of the file to write
+  std::string const &filename;                                                  /// name of the file to write
   std::span<std::byte const> data;                                              /// the location of the file's contents in memory
   uint64_t mtime{0u};                                                           /// file modification time, in seconds since epoch
   std::string filemode{"644"};                                                  /// file mode
   unsigned int uid{0u};                                                         /// file owner user ID
   unsigned int gid{0u};                                                         /// file owner group ID
-  std::string uname{"root"};                                                    /// file owner username
-  std::string gname{"root"};                                                    /// file owner group name
+  std::string const &uname{"root"};                                             /// file owner username
+  std::string const &gname{"root"};                                             /// file owner group name
 };
 
 template<typename T>
