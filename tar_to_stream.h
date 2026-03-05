@@ -51,10 +51,10 @@ void tar_to_stream(T &stream,                                                   
   std::strncpy(header.uname, file.uname.c_str(),    sizeof(header.uname) - 1);
   std::strncpy(header.gname, file.gname.c_str(),    sizeof(header.gname) - 1);
 
-  snprintf(header.size,  sizeof(header.size),  "%011zo",  file.data.size());
+  snprintf(header.size,  sizeof(header.size),  "%011zo",      file.data.size());
   snprintf(header.mtime, sizeof(header.mtime), "%011" PRIo64, file.mtime);
-  snprintf(header.uid,   sizeof(header.uid),   "%07o",    file.uid);
-  snprintf(header.gid,   sizeof(header.gid),   "%07o",    file.gid);
+  snprintf(header.uid,   sizeof(header.uid),   "%07o",        file.uid);
+  snprintf(header.gid,   sizeof(header.gid),   "%07o",        file.gid);
 
   {
     unsigned int checksum_value = 0;
