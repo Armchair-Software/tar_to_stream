@@ -16,8 +16,8 @@ struct tar_to_stream_properties {
   std::string filemode{"644"};                                                  /// file mode
   unsigned int uid{0u};                                                         /// file owner user ID
   unsigned int gid{0u};                                                         /// file owner group ID
-  std::string const &uname{"root"};                                             /// file owner username
-  std::string const &gname{"root"};                                             /// file owner group name
+  std::string uname{"root"};                                                    /// file owner username
+  std::string gname{"root"};                                                    /// file owner group name
 };
 
 template<typename T>
