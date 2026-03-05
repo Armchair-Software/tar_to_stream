@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cinttypes>
+#include <cstdint>
 #include <span>
 #include <string>
 #include <string_view>
@@ -7,14 +9,14 @@
 
 struct tar_to_stream_properties {
   /// Properties of the file to enter into the stream
-  std::string const &filename;                                                  /// name of the file to write
+  std::string filename;                                                         /// name of the file to write
   std::span<std::byte const> data;                                              /// the location of the file's contents in memory
   uint64_t mtime{0u};                                                           /// file modification time, in seconds since epoch
   std::string filemode{"644"};                                                  /// file mode
   unsigned int uid{0u};                                                         /// file owner user ID
   unsigned int gid{0u};                                                         /// file owner group ID
-  std::string const &uname{"root"};                                             /// file owner username
-  std::string const &gname{"root"};                                             /// file owner group name
+  std::string uname{"root"};                                                    /// file owner username
+  std::string gname{"root"};                                                    /// file owner group name
 };
 
 template<typename T>
@@ -41,24 +43,25 @@ void tar_to_stream(T &stream,                                                   
     char padding[12]{};                                                         // 500    padding to reach 512 block size
   } header;                                                                     // 512
 
-  file.filemode.insert(file.filemode.begin(), 7 - file.filemode.length(), '0'); // zero-pad the file mode
+  if(file.filemode.length() < 7)
+    file.filemode.insert(file.filemode.begin(), 7 - file.filemode.length(), '0'); // zero-pad the file mode
 
   std::strncpy(header.name,  file.filename.c_str(), sizeof(header.name ) - 1);  // leave one char for the final null
   std::strncpy(header.mode,  file.filemode.c_str(), sizeof(header.mode ) - 1);
   std::strncpy(header.uname, file.uname.c_str(),    sizeof(header.uname) - 1);
   std::strncpy(header.gname, file.gname.c_str(),    sizeof(header.gname) - 1);
 
-  sprintf(header.size,  "%011lo",  file.data.size());
-  sprintf(header.mtime, "%011llo", file.mtime);
-  sprintf(header.uid,   "%07o",    file.uid);
-  sprintf(header.gid,   "%07o",    file.gid);
+  snprintf(header.size,  sizeof(header.size),  "%011zo",  file.data.size());
+  snprintf(header.mtime, sizeof(header.mtime), "%011" PRIo64, file.mtime);
+  snprintf(header.uid,   sizeof(header.uid),   "%07o",    file.uid);
+  snprintf(header.gid,   sizeof(header.gid),   "%07o",    file.gid);
 
   {
     unsigned int checksum_value = 0;
     for(size_t i{0}; i != sizeof(header); ++i) {
       checksum_value += reinterpret_cast<uint8_t*>(&header)[i];
     }
-    sprintf(header.chksum, "%06o", checksum_value);
+    snprintf(header.chksum, sizeof(header.chksum), "%06o", checksum_value);
   }
 
   size_t const padding{(512u - file.data.size() % 512) & 511u};

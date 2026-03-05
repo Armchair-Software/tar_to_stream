@@ -55,7 +55,7 @@ auto main()->int {
     .data{std::as_bytes(std::span{my_buffer})},
   });
   tar_to_stream(stream, {
-    .filename{"my_file_3.txt",
+    .filename{"my_file_3.txt"},
     .data{std::as_bytes(std::span{my_buffer})},
   });
   tar_to_stream_tail(stream); // finalise the archive by adding a tail of zeros
