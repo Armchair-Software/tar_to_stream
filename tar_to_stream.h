@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cinttypes>
+#include <cstdio>
 #include <cstdint>
 #include <span>
 #include <string>
@@ -51,17 +52,17 @@ void tar_to_stream(T &stream,                                                   
   std::strncpy(header.uname, file.uname.c_str(),    sizeof(header.uname) - 1);
   std::strncpy(header.gname, file.gname.c_str(),    sizeof(header.gname) - 1);
 
-  snprintf(header.size,  sizeof(header.size),  "%011zo",      file.data.size());
-  snprintf(header.mtime, sizeof(header.mtime), "%011" PRIo64, file.mtime);
-  snprintf(header.uid,   sizeof(header.uid),   "%07o",        file.uid);
-  snprintf(header.gid,   sizeof(header.gid),   "%07o",        file.gid);
+  std::snprintf(header.size,  sizeof(header.size),  "%011zo",      file.data.size());
+  std::snprintf(header.mtime, sizeof(header.mtime), "%011" PRIo64, file.mtime);
+  std::snprintf(header.uid,   sizeof(header.uid),   "%07o",        file.uid);
+  std::snprintf(header.gid,   sizeof(header.gid),   "%07o",        file.gid);
 
   {
     unsigned int checksum_value = 0;
     for(size_t i{0}; i != sizeof(header); ++i) {
       checksum_value += reinterpret_cast<uint8_t*>(&header)[i];
     }
-    snprintf(header.chksum, sizeof(header.chksum), "%06o", checksum_value);
+    std::snprintf(header.chksum, sizeof(header.chksum), "%06o", checksum_value);
   }
 
   size_t const padding{(512u - file.data.size() % 512) & 511u};
