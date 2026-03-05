@@ -58,7 +58,7 @@ void tar_to_stream(T &stream,                                                   
   std::snprintf(header.gid,   sizeof(header.gid),   "%07o",        file.gid);
 
   {
-    unsigned int checksum_value = 0;
+    unsigned int checksum_value{0};
     for(size_t i{0}; i != sizeof(header); ++i) {
       checksum_value += reinterpret_cast<uint8_t*>(&header)[i];
     }
