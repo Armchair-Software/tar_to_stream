@@ -77,8 +77,9 @@ TEST_CASE("Header magic and format fields") {
   SECTION("Magic is 'ustar '") {
     CHECK(std::string(hdr.magic, sizeof(hdr.magic)) == "ustar ");
   }
-  SECTION("Version is ' '") {
+  SECTION("Version field: first byte is ' ', second byte is null") {
     CHECK(hdr.version[0] == ' ');
+    CHECK(hdr.version[1] == '\0');
   }
   SECTION("Typeflag is '0' (regular file)") {
     CHECK(hdr.typeflag == '0');
