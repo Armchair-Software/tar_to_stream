@@ -15,7 +15,9 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Install dependencies
-        run: sudo apt-get install -y lcov
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lcov
 
       - name: Configure
         run: cmake -B build -S tests -DENABLE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
