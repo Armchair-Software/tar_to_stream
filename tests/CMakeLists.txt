@@ -15,6 +15,6 @@ if(ENABLE_COVERAGE)
   target_link_options(test_tar_to_stream PRIVATE --coverage)
 endif()
 
-list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
 include(Catch)
 catch_discover_tests(test_tar_to_stream)
