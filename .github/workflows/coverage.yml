@@ -1,0 +1,38 @@
+name: Coverage
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lcov
+        run: sudo apt-get install -y lcov
+
+      - name: Build with coverage instrumentation
+        run: |
+          g++ -std=c++20 --coverage -fprofile-arcs -ftest-coverage \
+            -I. tests/test_tar_to_stream.cpp -o test_runner
+
+      - name: Run tests
+        run: ./test_runner
+
+      - name: Collect coverage data
+        run: |
+          lcov --capture --directory . --output-file coverage.info
+          lcov --extract coverage.info "*/tar_to_stream.h" --output-file coverage.info
+          lcov --list coverage.info
+
+      - name: Generate HTML report
+        run: genhtml coverage.info --output-directory coverage_html
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage_html/
