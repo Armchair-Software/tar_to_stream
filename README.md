@@ -1,4 +1,6 @@
 # tar_to_stream.h
+[![Tests](https://github.com/Armchair-Software/tar_to_stream/actions/workflows/tests.yml/badge.svg)](https://github.com/Armchair-Software/tar_to_stream/actions/workflows/tests.yml)
+
 A tiny C++ single-header header-only library for writing TAR archives to arbitrary streams, packaging data from memory.
 
 ## Features
