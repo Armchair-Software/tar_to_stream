@@ -31,6 +31,13 @@ jobs:
           lcov --capture --directory build --output-file coverage.info
           lcov --remove coverage.info '/usr/*' '*/build/_deps/*' --output-file coverage.info
           lcov --list coverage.info
+          genhtml coverage.info --output-directory coverage_html
+
+      - name: Upload coverage HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage_html/
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
