@@ -1,3 +1,14 @@
+cmake_minimum_required(VERSION 3.20)
+project(tar_to_stream_tests CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+option(ENABLE_COVERAGE "Enable code coverage instrumentation" OFF)
+
+include(CTest)
+
 include(FetchContent)
 
 FetchContent_Declare(
@@ -8,7 +19,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(test_tar_to_stream test_tar_to_stream.cpp)
-target_link_libraries(test_tar_to_stream PRIVATE tar_to_stream Catch2::Catch2WithMain)
+target_include_directories(test_tar_to_stream PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+target_link_libraries(test_tar_to_stream PRIVATE Catch2::Catch2WithMain)
 
 if(ENABLE_COVERAGE)
   target_compile_options(test_tar_to_stream PRIVATE --coverage -O0 -g)

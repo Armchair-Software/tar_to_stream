@@ -18,7 +18,7 @@ jobs:
         run: sudo apt-get install -y lcov
 
       - name: Configure
-        run: cmake -B build -DENABLE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
+        run: cmake -B build -S tests -DENABLE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
 
       - name: Build
         run: cmake --build build --parallel
