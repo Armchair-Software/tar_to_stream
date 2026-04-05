@@ -7,7 +7,7 @@
 // Verify the standard TAR magic bytes and typeflag in the first 512-byte header block
 static void check_header(const std::string &output) {
   assert(output.size() >= 512);
-  assert(std::memcmp(output.data() + 257, "ustar ", 6) == 0); // magic
+  assert(std::memcmp(output.data() + 257, "ustar ", 6) == 0); // magic bytes
   assert(output[263] == ' ');                                  // version
   assert(output[156] == '0');                                  // typeflag: regular file
 }
@@ -60,7 +60,7 @@ int main() {
     assert(std::memcmp(output.data(), "dir/file.txt", 12) == 0);
   }
 
-  // Test 4: filemode already 7 chars long – no zero-padding branch taken
+  // Test 4: filemode already 7 chars long – zero-padding insert is skipped
   {
     std::ostringstream stream;
     std::string data{"x"};

@@ -7,6 +7,8 @@ on:
 jobs:
   coverage:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -16,8 +18,7 @@ jobs:
 
       - name: Build with coverage instrumentation
         run: |
-          g++ -std=c++20 --coverage -fprofile-arcs -ftest-coverage \
-            -I. tests/test_tar_to_stream.cpp -o test_runner
+          g++ -std=c++20 --coverage -I. tests/test_tar_to_stream.cpp -o test_runner
 
       - name: Run tests
         run: ./test_runner
