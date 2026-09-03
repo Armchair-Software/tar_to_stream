@@ -1,0 +1,343 @@
+Start testing: Sep 03 15:02 UTC
+----------------------------------------------------------
+1/17 Testing: Single file produces at least one 512-byte block
+1/17 Test: Single file produces at least one 512-byte block
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Single file produces at least one 512-byte block"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Single file produces at least one 512-byte block" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Single file produces at least one 512-byte block"
+Randomness seeded to: 432517114
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Single file produces at least one 512-byte block" end time: Sep 03 15:02 UTC
+"Single file produces at least one 512-byte block" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/17 Testing: Header magic and format fields
+2/17 Test: Header magic and format fields
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Header magic and format fields"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Header magic and format fields" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Header magic and format fields"
+Randomness seeded to: 262240992
+===============================================================================
+All tests passed (108 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Header magic and format fields" end time: Sep 03 15:02 UTC
+"Header magic and format fields" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/17 Testing: File content appears immediately after the 512-byte header
+3/17 Test: File content appears immediately after the 512-byte header
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "File content appears immediately after the 512-byte header"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"File content appears immediately after the 512-byte header" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "File content appears immediately after the 512-byte header"
+Randomness seeded to: 1712623681
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"File content appears immediately after the 512-byte header" end time: Sep 03 15:02 UTC
+"File content appears immediately after the 512-byte header" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/17 Testing: Filename stored correctly in header
+4/17 Test: Filename stored correctly in header
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Filename stored correctly in header"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Filename stored correctly in header" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Filename stored correctly in header"
+Randomness seeded to: 2536257993
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Filename stored correctly in header" end time: Sep 03 15:02 UTC
+"Filename stored correctly in header" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/17 Testing: File mode zero-padded to 7 digits
+5/17 Test: File mode zero-padded to 7 digits
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "File mode zero-padded to 7 digits"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"File mode zero-padded to 7 digits" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "File mode zero-padded to 7 digits"
+Randomness seeded to: 2846148905
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"File mode zero-padded to 7 digits" end time: Sep 03 15:02 UTC
+"File mode zero-padded to 7 digits" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/17 Testing: UID and GID stored as zero-padded octal
+6/17 Test: UID and GID stored as zero-padded octal
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "UID and GID stored as zero-padded octal"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"UID and GID stored as zero-padded octal" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "UID and GID stored as zero-padded octal"
+Randomness seeded to: 1817829770
+===============================================================================
+All tests passed (10 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UID and GID stored as zero-padded octal" end time: Sep 03 15:02 UTC
+"UID and GID stored as zero-padded octal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/17 Testing: File size stored as 11-digit octal in header
+7/17 Test: File size stored as 11-digit octal in header
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "File size stored as 11-digit octal in header"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"File size stored as 11-digit octal in header" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "File size stored as 11-digit octal in header"
+Randomness seeded to: 561264167
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"File size stored as 11-digit octal in header" end time: Sep 03 15:02 UTC
+"File size stored as 11-digit octal in header" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/17 Testing: Modification time stored as 11-digit octal
+8/17 Test: Modification time stored as 11-digit octal
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Modification time stored as 11-digit octal"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Modification time stored as 11-digit octal" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Modification time stored as 11-digit octal"
+Randomness seeded to: 2239336047
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Modification time stored as 11-digit octal" end time: Sep 03 15:02 UTC
+"Modification time stored as 11-digit octal" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/17 Testing: Username and group name in header
+9/17 Test: Username and group name in header
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Username and group name in header"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Username and group name in header" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Username and group name in header"
+Randomness seeded to: 4082412487
+===============================================================================
+All tests passed (8 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Username and group name in header" end time: Sep 03 15:02 UTC
+"Username and group name in header" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/17 Testing: Header checksum is correct
+10/17 Test: Header checksum is correct
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Header checksum is correct"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Header checksum is correct" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Header checksum is correct"
+Randomness seeded to: 1378990852
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Header checksum is correct" end time: Sep 03 15:02 UTC
+"Header checksum is correct" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/17 Testing: Checksum changes when header fields change
+11/17 Test: Checksum changes when header fields change
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Checksum changes when header fields change"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Checksum changes when header fields change" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Checksum changes when header fields change"
+Randomness seeded to: 3405780018
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Checksum changes when header fields change" end time: Sep 03 15:02 UTC
+"Checksum changes when header fields change" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/17 Testing: Output is padded to 512-byte blocks
+12/17 Test: Output is padded to 512-byte blocks
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Output is padded to 512-byte blocks"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Output is padded to 512-byte blocks" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Output is padded to 512-byte blocks"
+Randomness seeded to: 16370949
+===============================================================================
+All tests passed (511 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Output is padded to 512-byte blocks" end time: Sep 03 15:02 UTC
+"Output is padded to 512-byte blocks" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/17 Testing: tar_to_stream_tail produces null bytes
+13/17 Test: tar_to_stream_tail produces null bytes
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "tar_to_stream_tail produces null bytes"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"tar_to_stream_tail produces null bytes" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "tar_to_stream_tail produces null bytes"
+Randomness seeded to: 1340010517
+===============================================================================
+All tests passed (3074 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"tar_to_stream_tail produces null bytes" end time: Sep 03 15:02 UTC
+"tar_to_stream_tail produces null bytes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/17 Testing: Multiple files are laid out correctly in the archive
+14/17 Test: Multiple files are laid out correctly in the archive
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Multiple files are laid out correctly in the archive"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Multiple files are laid out correctly in the archive" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Multiple files are laid out correctly in the archive"
+Randomness seeded to: 3427623366
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Multiple files are laid out correctly in the archive" end time: Sep 03 15:02 UTC
+"Multiple files are laid out correctly in the archive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/17 Testing: Content of each file in a multi-file archive is correct
+15/17 Test: Content of each file in a multi-file archive is correct
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Content of each file in a multi-file archive is correct"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Content of each file in a multi-file archive is correct" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Content of each file in a multi-file archive is correct"
+Randomness seeded to: 1007692180
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Content of each file in a multi-file archive is correct" end time: Sep 03 15:02 UTC
+"Content of each file in a multi-file archive is correct" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/17 Testing: Deprecated positional API produces identical output to the new API
+16/17 Test: Deprecated positional API produces identical output to the new API
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Deprecated positional API produces identical output to the new API"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Deprecated positional API produces identical output to the new API" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Deprecated positional API produces identical output to the new API"
+Randomness seeded to: 1725676204
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Deprecated positional API produces identical output to the new API" end time: Sep 03 15:02 UTC
+"Deprecated positional API produces identical output to the new API" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/17 Testing: Complete archive has valid structure
+17/17 Test: Complete archive has valid structure
+Command: "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream" "Complete archive has valid structure"
+Directory: /home/runner/work/tar_to_stream/tar_to_stream/build
+"Complete archive has valid structure" start time: Sep 03 15:02 UTC
+Output:
+----------------------------------------------------------
+Filters: "Complete archive has valid structure"
+Randomness seeded to: 1603873584
+===============================================================================
+All tests passed (8 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Complete archive has valid structure" end time: Sep 03 15:02 UTC
+"Complete archive has valid structure" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 03 15:02 UTC
