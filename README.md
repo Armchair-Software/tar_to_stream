@@ -1,4 +1,7 @@
 # tar_to_stream.h
+[![Tests](https://github.com/Armchair-Software/tar_to_stream/actions/workflows/tests.yml/badge.svg)](https://github.com/Armchair-Software/tar_to_stream/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/Armchair-Software/tar_to_stream/branch/main/graph/badge.svg)](https://codecov.io/gh/Armchair-Software/tar_to_stream)
+
 A tiny C++ single-header header-only library for writing TAR archives to arbitrary streams, packaging data from memory.
 
 ## Features
@@ -114,6 +117,31 @@ Hello world!
 - Using `tar_to_stream_tail(stream)` after adding all your files is optional, but recommended.
   - It is in the [official standard](https://www.gnu.org/software/tar/manual/html_node/Standard.html), but most TAR extraction tools should function just fine without it.
   - Many implementations will issue a truncation warning if it is not found.
+
+## Running tests and coverage locally
+
+You can build and run the Catch2 test suite locally with CMake:
+
+```bash
+cmake -B build -S tests -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+```
+
+To generate a local coverage report, enable coverage instrumentation and use `lcov` plus `genhtml`:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y lcov
+cmake -B build -S tests -DENABLE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --parallel
+ctest --test-dir build --output-on-failure
+lcov --capture --directory build --output-file coverage.info
+lcov --remove coverage.info '/usr/*' '*/build/_deps/*' --output-file coverage.info
+genhtml coverage.info --output-directory coverage_html
+```
+
+Open `coverage_html/index.html` in a browser to inspect the report.
 
 ## Limitations
 
