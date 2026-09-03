@@ -1,0 +1,5 @@
+build/
+coverage.info
+coverage_html/
+*.gcda
+*.gcno

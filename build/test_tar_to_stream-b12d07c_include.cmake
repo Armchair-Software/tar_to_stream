@@ -1,5 +1,0 @@
-if(EXISTS "/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream-b12d07c_tests.cmake")
-  include("/home/runner/work/tar_to_stream/tar_to_stream/build/test_tar_to_stream-b12d07c_tests.cmake")
-else()
-  add_test(test_tar_to_stream_NOT_BUILT-b12d07c test_tar_to_stream_NOT_BUILT-b12d07c)
-endif()
