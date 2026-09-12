@@ -10,7 +10,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  skip-duplicate:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+    outputs:
+      should_skip: ${{ steps.check.outcome == 'success' && steps.check.outputs.should_skip == 'true' }}
+    steps:
+    - name: Check for a successful duplicate
+      id: check
+      uses: fkirc/skip-duplicate-actions@b974a9395958c231af965b70070979a577efa578 # v5.3.2
+      # An API failure must fall back to running CI.
+      continue-on-error: true
+      with:
+        # Only reuse completed successes; a running build could still fail or be cancelled.
+        concurrent_skipping: 'never'
+        skip_after_successful_duplicate: 'true'
+        cancel_others: 'false'
+        do_not_skip: '["workflow_dispatch","schedule","merge_group","release"]'
+
   test:
+    needs: skip-duplicate
+    if: needs.skip-duplicate.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: read
